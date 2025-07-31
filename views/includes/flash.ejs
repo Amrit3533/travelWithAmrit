@@ -1,0 +1,13 @@
+<% if(success && success.length){ %>
+  <div class="alert alert-success alert-dismissible fade show mx-auto mt-3 w-100 w-md-75 w-lg-50" role="alert" style="max-width: 600px;">
+    <%= success %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if(error && error.length){ %>
+  <div class="alert alert-danger alert-dismissible fade show mx-auto mt-3 w-100 w-md-75 w-lg-50" role="alert" style="max-width: 600px;">
+    <%= error %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>

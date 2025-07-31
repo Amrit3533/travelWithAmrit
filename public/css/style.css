@@ -1,0 +1,179 @@
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100% !important;
+}
+
+.plus-jakarta-sans-body {
+  font-family: "Plus Jakarta Sans", serif !important;
+  font-optical-sizing: auto !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+.heading {
+  text-align: center;
+  margin: 2rem;
+}
+.navbar {
+  height: 4rem;
+  background-color: white;
+}
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+.nav-link {
+  color: #222222 !important;
+}
+html {
+  height: 100%;
+}
+footer {
+  margin-top: auto !important;
+}
+.f-info-links {
+  color: #222222;
+  text-decoration: none;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+.f-info {
+  text-align: center;
+  display: flex;
+  height: 5rem;
+  background-color: rgba(194, 192, 192, 0.442);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.card-body {
+  padding: 0;
+}
+.card-text p {
+  font-weight: 400;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/* new page  */
+.container {
+  flex: 1;
+}
+.add-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+/* show page  */
+.show-img {
+  height: 30vh;
+}
+.show-card {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* MAP */
+#map {
+  width: 100%;
+  height: 40vh;
+}
+
+/* navbar.ejs  */
+  .search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem;
+  }
+
+  .search-btn:hover {
+    background-color: #fe424d;
+    color: #fff;
+  }
+
+  .btn i {
+    display: inline;
+    margin-right: 0.5rem !important;
+  }
+
+  .center-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .center-search {
+      margin-top: 0;
+    }
+
+    .search-form {
+      width: 400px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .search-form {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .search-btn,
+    .form-control {
+      width: 100%;
+    }
+
+    .navbar-collapse {
+      background-color: #fff;
+      padding: 1rem;
+      z-index: 10;
+    }
+  }
+
+  /* Ensures content below navbar doesn't get overlapped */
+  body {
+    padding-top: 4.5rem; /* Adjust if navbar height changes */
+  }
+
+  .navbar {
+    z-index: 1030; /* Ensure it stays above other content */
+
+  }
+/* navbar.ejs  */

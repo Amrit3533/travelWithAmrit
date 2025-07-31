@@ -1,0 +1,85 @@
+<% layout("layouts/boilerplate") %>
+  <h3 class="heading text-center">Edit Listing</h3>
+  <form action="/listings/<%=listing._id%>?_method=PUT" method="POST" novalidate class="needs-validation"
+    enctype="multipart/form-data">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="mb-3">
+            <label for="title" class="form-label">Edit Title</label>
+            <input class="form-control" type="text" name="listing[title]" required value="<%=listing.title%>">
+            <div class="invalid-feedback">Please Enter Title</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="mb-3">
+            <label for="location" class="form-label">Edit Location</label>
+            <input class="form-control" type="text" name="listing[location]" required value="<%=listing.location%>">
+            <div class="invalid-feedback">Please Enter Location</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="mb-3">
+            <label>Original Listing Image:</label><br />
+            <img src="<%=originalImageUrl%>" class="img-fluid" alt="Original Image">
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="mb-3">
+            <label for="image" class="form-label">Edit Image</label>
+            <input class="form-control" type="file" name="listing[image]" value="<%=listing.image.url%>">
+            <div class="invalid-feedback">Upload new Image</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8 offset-md-2 mb-3"> <label for="category" class="form-label">Hotel Category</label>
+          <select class="form-select" id="type" name="listing[category]" required>
+            <option disabled value="">Select Category</option>
+            <option value="mountains" <%=listing.category==='mountains' ? 'selected' : '' %>>Mountains</option>
+            <option value="arctic" <%=listing.category==='arctic' ? 'selected' : '' %>>Arctic</option>
+            <option value="camping" <%=listing.category==='camping' ? 'selected' : '' %>>Camping</option>
+            <option value="trending" <%=listing.category==='trending' ? 'selected' : '' %>>Trending</option>
+            <option value="rooms" <%=listing.category==='rooms' ? 'selected' : '' %>>Rooms</option>
+            <option value="iconic_Cities" <%=listing.category==='iconic_Cities' ? 'selected' : '' %>>Iconic Cities
+            </option>
+            <option value="castles" <%=listing.category==='castles' ? 'selected' : '' %>>Castles</option>
+            <option value="pools" <%=listing.category==='pools' ? 'selected' : '' %>>Pools</option>
+            <option value="farms" <%=listing.category==='farms' ? 'selected' : '' %>>Farms</option>
+          </select>
+          <div class="invalid-feedback">Please Select a Category</div>
+        </div>
+
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <label for="price" class="form-label">Edit Price</label>
+              <input class="form-control" type="number" name="listing[price]" required value="<%=listing.price%>">
+              <div class="invalid-feedback">Please Enter Price</div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label for="country" class="form-label">Edit Country</label>
+              <input class="form-control" type="text" name="listing[country]" required value="<%=listing.country%>">
+              <div class="invalid-feedback">Please Enter Country</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="mb-3">
+            <label for="description" class="form-label">Edit Description</label>
+            <textarea class="form-control" name="listing[description]" rows="4"
+              required><%=listing.description%></textarea>
+            <div class="invalid-feedback">Please Enter Description</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8 offset-md-2 text-center">
+          <button class="btn btn-dark add-btn mt-3 mb-3" type="submit">Edit</button>
+        </div>
+      </div>
+    </div>
+  </form>

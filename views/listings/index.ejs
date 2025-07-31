@@ -1,0 +1,233 @@
+<% layout("/layouts/boilerplate") %>
+  <style>
+  /* Filters Styles */
+  #filters {
+   display: flex;
+   flex-wrap: nowrap; /* Change to wrap on desktop, but keep nowrap for mobile scroll */
+   overflow-x: auto;
+   gap: 6px;
+   padding: 10px;
+   align-items: center;
+   background: #fff;
+   border-bottom: 1px solid #ccc;
+   /* Added for consistent spacing with tax toggle */
+      justify-content: space-between; /* Distribute items */
+  }
+
+  /* Change .filter from div to a tag styles */
+  .filter {
+   flex: 0 0 auto;
+   text-align: center;
+   font-size: 14px;
+   color: #333; /* Default text color */
+   text-decoration: none; /* Remove underline from link */
+   opacity: 0.7;
+   padding: 0.5rem 0.8rem; /* Add some padding for clickability */
+   border-radius: 0.5rem; /* Slightly rounded corners */
+   transition: all 0.2s ease-in-out; /* Smooth transition */
+  }
+
+  .filter:hover {
+   opacity: 1;
+   cursor: pointer;
+   background-color: #f0f0f0; /* Light background on hover */
+   transform: translateY(-2px); /* Slight lift on hover */
+  }
+
+    /* Active state for filter */
+    .filter.active {
+        opacity: 1;
+        border-bottom: 2px solid black; /* Highlight active filter */
+        color: black; /* Active text color */
+    }
+
+  .filter div {
+   font-size: 20px; /* Adjust icon size as needed */
+   margin-bottom: 5px;
+  }
+
+    /* Ensure Font Awesome icons are part of the filter's div and inherit color */
+    .filter div i {
+        color: inherit; /* Icons will inherit color from .filter or .filter.active */
+    }
+
+  .filter p {
+   font-size: 0.9rem;
+   margin-bottom: 0; /* Remove default paragraph margin */
+  }
+
+  /* .tax-info {
+   display: none;
+  } */
+
+  .tax-toogle {
+   border: 1px solid black;
+   border-radius: 0.5rem;
+   height: 2.5rem;
+   padding: 0.5rem;
+   display: flex;
+   align-items: center;
+   flex-shrink: 0;
+   margin-left: auto; /* Pushes to the right */
+   min-width: 200px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+   display: none;
+  }
+
+  /* Hide scrollbars */
+  #filters::-webkit-scrollbar {
+   display: none;
+  }
+
+  #filters {
+   -ms-overflow-style: none;
+   /* IE and Edge */
+   scrollbar-width: none;
+   /* Firefox */
+  }
+
+  /* Desktop Enhancements */
+  @media (min-width: 768px) {
+   #filters {
+    flex-wrap: wrap; /* Allows wrapping on larger screens */
+    overflow-x: visible; /* No horizontal scrollbar on larger screens */
+    /* Adjust gap or justify-content if needed for wider screens */
+        justify-content: flex-start; /* Align filters to start on desktop */
+   }
+
+   .carousel-control-prev,
+   .carousel-control-next {
+    display: inline-block;
+   }
+
+   /* .tax-toogle {
+    margin-left: 4.8rem;
+   } */
+
+  }
+
+  #imageHover {
+   transition: filter 0.1s ease-in-out;
+  }
+
+  #imageHover:hover {
+   /* transform: scale(1.02); */
+   filter: brightness(0.8); /* more fade */
+   cursor: pointer;
+  }
+
+  .tax-info {
+   font-size: 0.8rem;
+   color: gray;
+  }
+
+  @media (max-width: 576px) {
+   .card-img-top {
+    height: 15rem !important;
+   }
+
+   .card-body {
+    padding: 1rem;
+   }
+
+   .listing-card {
+    margin-bottom: 0;
+   }
+  }
+ </style>
+
+ <div id="filters">
+    <a href="/listings" class="filter <% if (!activeCategory) { %>active<% } %>">
+        <div><i class="fa-solid fa-globe"></i></div>
+        <p>All</p>
+    </a>
+  <a href="/listings?category=trending" class="filter <% if (activeCategory === 'trending') { %>active<% } %>">
+   <div><i class="fa-solid fa-fire"></i></div><p>Trending</p>
+  </a>
+  <a href="/listings?category=rooms" class="filter <% if (activeCategory === 'rooms') { %>active<% } %>">
+   <div><i class="fa-solid fa-bed"></i></div><p>Rooms</p>
+  </a>
+  <a href="/listings?category=iconic_Cities" class="filter <% if (activeCategory === 'iconic_Cities') { %>active<% } %>">
+   <div><i class="fa-solid fa-mountain-city"></i></div><p>Iconic Cities</p>
+  </a>
+  <a href="/listings?category=mountains" class="filter <% if (activeCategory === 'mountains') { %>active<% } %>">
+   <div><i class="fa-solid fa-mountain-sun"></i></div><p>Mountains</p>
+  </a>
+  <a href="/listings?category=castles" class="filter <% if (activeCategory === 'castles') { %>active<% } %>">
+   <div><i class="fa-brands fa-fort-awesome"></i></div><p>Castles</p>
+  </a>
+  <a href="/listings?category=pools" class="filter <% if (activeCategory === 'pools') { %>active<% } %>">
+   <div><i class="fa-solid fa-person-swimming"></i></div><p>Amazing Pools</p>
+  </a>
+  <a href="/listings?category=camping" class="filter <% if (activeCategory === 'camping') { %>active<% } %>">
+   <div><i class="fa-solid fa-campground"></i></div><p>Camping</p>
+  </a>
+  <a href="/listings?category=farms" class="filter <% if (activeCategory === 'farms') { %>active<% } %>">
+   <div><i class="fa-solid fa-tractor"></i></div><p>Farms</p>
+  </a>
+  <a href="/listings?category=arctic" class="filter <% if (activeCategory === 'arctic') { %>active<% } %>">
+   <div><i class="fa-solid fa-snowflake"></i></div><p>Arctic</p>
+  </a>
+  <div class="tax-toogle">
+   <div class="form-check-reverse form-switch">
+    <label class="form-check-label" for="switchCheckDefault">Display including all taxes</label>
+    <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+   </div>
+  </div>
+ </div>
+
+
+
+<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+ <% allListings.forEach((listing, index) => { %>
+  <div class="col">
+   <div class="card listing-card h-100">
+    <a href="/listings/<%= listing._id %>" class="listing-link text-decoration-none text-dark">
+     <img src="<%= listing.image.url %>" class="card-img-top" id="imageHover" alt="listing_image"
+      style="height: 20rem; object-fit: cover;">
+     <div class="card-body">
+      <ul class="list-unstyled mb-2">
+       <li><b><%= listing.title %></b></li>
+      </ul>
+      <p class="card-text mb-0">
+       <b>Price/Night:</b>
+       ₹<%= listing.price.toLocaleString("en-in") %>
+       <span class="tax-info d-none"> +18% GST = ₹<span id="finalPrice-<%= index %>"></span></span>
+      </p>
+     </div>
+    </a>
+   </div>
+  </div>
+ <% }); %>
+</div>
+
+
+<script src="/js/calculatePrice.js"></script>
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const taxSwitch = document.getElementById("switchCheckDefault");
+
+  if (taxSwitch) {
+   taxSwitch.addEventListener("change", () => {
+    const taxInfos = document.querySelectorAll(".tax-info");
+    const allPrices = document.querySelectorAll(".card-text");
+
+    allPrices.forEach((priceEl, index) => {
+     const rawPriceText = priceEl.textContent.match(/₹([\d,]+)/);
+     if (rawPriceText) {
+      const price = Number(rawPriceText[1].replace(/,/g, ''));
+      calculatePrice(price, `finalPrice-${index}`);
+     }
+    });
+
+    taxInfos.forEach((info) => {
+     info.classList.toggle("d-none");
+    });
+   });
+  }
+ });
+</script>
