@@ -66,8 +66,8 @@ Follow these steps to get a local copy of the project up and running:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Amrit3533/travelwith_amrit.git](https://github.com/Amrit3533/travelwith_amrit.git)
-    cd travelwith_amrit
+    git clone [https://github.com/Amrit3533/travelwithAmrit.git](https://github.com/Amrit3533/travelwithAmrit.git)
+    cd travelwithAmrit
     ```
 
 2.  **Install dependencies:**
