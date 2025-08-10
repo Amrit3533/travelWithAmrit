@@ -35,7 +35,7 @@ router
       failureFlash: true,
     }),
     (req, res) => {
-      req.flash("success", "Welcome Back to Wanderlust");
+      req.flash("success", "Welcome Back to travelWithAmrit");
       let redirectUrl = res.locals.redirectUrl || "/listings";
       res.redirect(redirectUrl);
     }
