@@ -1,7 +1,7 @@
 # TravelWithAmrit
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-TravelWithAmrit-blue?style=for-the-badge&logo=render)](https://travelwith-amrit.onrender.com)
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-brightgreen?style=for-the-badge&logo=github)](https://github.com/Amrit3533/travelwith_amrit)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-TravelWithAmrit-blue?style=for-the-badge&logo=render)](https://travelwithamrit.onrender.com)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-brightgreen?style=for-the-badge&logo=github)](https://github.com/Amrit3533/travelWithAmrit)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## 🚀 Overview
@@ -114,7 +114,7 @@ Once the application is running, here's a quick guide to get started:
 ## 🔗 Live Demo
 
 Experience TravelWithAmrit live on Render:
-[https://travelwith-amrit.onrender.com](https://travelwith-amrit.onrender.com)
+[https://travelwith-amrit.onrender.com](https://travelwithamrit.onrender.com)
 
 ## 🤝 Contributing
 
